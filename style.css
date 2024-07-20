@@ -5,6 +5,7 @@ body {
   padding: 0;
   background: url('https://i.ibb.co/cCdLpgh/IMG-0683.png') no-repeat center center fixed;
   background-size: cover;
+  background-position: center; /* Center the background image */
   color: #fff;
   touch-action: manipulation; /* Prevent zooming */
 }
