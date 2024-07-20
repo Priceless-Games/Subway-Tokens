@@ -6,6 +6,7 @@ body {
   background: url('https://i.ibb.co/cCdLpgh/IMG-0683.png') no-repeat center center fixed;
   background-size: cover;
   color: #fff;
+  touch-action: manipulation; /* Prevent zooming */
 }
 
 header {
@@ -45,6 +46,7 @@ h1 {
   height: 100%;
   border-radius: 50%;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  touch-action: manipulation; /* Prevent zooming */
 }
 
 #tapButtonImage:hover {
@@ -62,6 +64,7 @@ h1 {
   border-radius: 50%;
   cursor: pointer;
   transition: transform 0.1s ease;
+  touch-action: manipulation; /* Prevent zooming */
 }
 
 .tapButton:active {
