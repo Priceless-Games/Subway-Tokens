@@ -1,0 +1,140 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background: url('https://i.ibb.co/cCdLpgh/IMG-0683.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+}
+
+header {
+  padding: 10px 0;
+}
+
+header .game-title {
+  font-family: 'Aileron Heavy', sans-serif;
+  font-size: 36px;
+  background: linear-gradient(to right, #ffffff, #e0e0e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#tapButtonContainer {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 20px;
+}
+
+#tapButtonImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#tapButtonImage:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.tapButton {
+  position: absolute;
+  background: none;
+  border: none;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.tapButton:active {
+  transform: scale(0.9);
+}
+
+/* Position the buttons within the tap button container */
+.tapButton:nth-child(2) { top: 0; left: 0; }
+.tapButton:nth-child(3) { top: 0; right: 0; }
+.tapButton:nth-child(4) { bottom: 0; left: 0; }
+.tapButton:nth-child(5) { bottom: 0; right: 0; }
+.tapButton:nth-child(6) { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+
+.points-container {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.points-container img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+#energy-bar-container {
+  width: 80%;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
+  margin-top: 20px;
+  position: relative;
+  border: 2px solid #FFD700;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.5), 0 5px 10px rgba(0,0,0,0.3);
+}
+
+#energy-bar {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, red, yellow, green);
+  border-radius: 15px 0 0 15px;
+  transition: width 0.5s ease, background 0.5s ease;
+  box-shadow: inset 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+p {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.thrifty-numerals {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 28px;
+}
+
+.play-music-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: url('https://i.ibb.co/s1XD6bm/IMG-0684-prev-ui.png') no-repeat center center;
+  background-size: cover;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-music-button i {
+  pointer-events: none;
+  color: transparent; /* Make icon invisible to show the background image */
+}
