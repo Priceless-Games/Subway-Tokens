@@ -3,11 +3,9 @@ body {
   text-align: center;
   margin: 0;
   padding: 0;
-  background: url('https://i.ibb.co/cCdLpgh/IMG-0683.png') no-repeat center center fixed;
+  background: url('https://i.ibb.co/9YX4Pbq/IMG-0726.png') no-repeat center center fixed;
   background-size: cover;
-  background-position: center; /* Center the background image */
   color: #fff;
-  touch-action: manipulation; /* Prevent zooming */
 }
 
 header {
@@ -25,6 +23,93 @@ header .game-title {
 
 h1 {
   margin: 0;
+}
+
+.blurry-bar {
+  position: absolute;
+  top: calc(50% - 200px); /* Adjust based on the tap button position */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 190pt; /* Set width to 250pt */
+  height: 40pt; /* Set height to 50pt */
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Blurry effect */
+  border-radius: 20px; /* Set border radius to 20px for curvature */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.bar-button {
+  display: flex;
+  flex-direction: column; /* Stack image and text vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none; /* Set border to none */
+  border-radius: 5px;
+  width: 45pt; /* Set width to 45pt */
+  height: 45pt; /* Set height to 45pt */
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  text-align: center;
+  white-space: nowrap; /* Ensure text does not wrap */
+}
+
+.bar-button:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.1);
+}
+
+.bar-button img {
+  width: 40pt; /* Set width to 50pt */
+  height: 40pt; /* Set height to 50pt */
+  margin-bottom: -5px; /* Reduce space between image and text */
+}
+
+.bar-button span {
+  font-weight: bold; /* Make text bold for better visibility */
+  text-shadow: 1px 1px 2px black; /* Add text shadow for contrast */
+  margin-top: 2px; /* Reduce space between image and text */
+  font-size: 6pt; /* Adjust font size to fit within the button */
+}
+
+#daily-reward-button {
+  background: none;
+}
+
+#daily-reward-button img {
+  background: url('https://i.ibb.co/cyR6wmk/IMG-0762.png') no-repeat center center;
+  background-size: cover;
+}
+
+#subway-farm-button {
+  background: none;
+}
+
+#subway-farm-button img {
+  background: url('https://i.ibb.co/gdRM66B/IMG-0763.png') no-repeat center center;
+  background-size: cover;
+  width: 75pt; /* Override width for subway farm button */
+  height: 75pt; /* Override height for subway farm button */
+  justify-content: center; /* Center the image horizontally */
+  margin-bottom: 10px; /* Reduce space between image and text */
+}
+
+#subway-farm-button span {
+  position: absolute;
+  margin-top: 50px; /* Reduce space between image and text */
+}
+
+#subway-runner-button {
+  background: none;
+}
+
+#subway-runner-button img {
+  background: url('https://i.ibb.co/KLYG137/IMG-0764.png') no-repeat center center;
+  background-size: cover;
 }
 
 .game-container {
@@ -47,7 +132,6 @@ h1 {
   height: 100%;
   border-radius: 50%;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  touch-action: manipulation; /* Prevent zooming */
 }
 
 #tapButtonImage:hover {
@@ -65,7 +149,6 @@ h1 {
   border-radius: 50%;
   cursor: pointer;
   transition: transform 0.1s ease;
-  touch-action: manipulation; /* Prevent zooming */
 }
 
 .tapButton:active {
@@ -141,4 +224,8 @@ p {
 .play-music-button i {
   pointer-events: none;
   color: transparent; /* Make icon invisible to show the background image */
+}
+
+#background-music {
+  display: none;
 }
