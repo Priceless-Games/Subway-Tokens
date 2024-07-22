@@ -2,6 +2,7 @@ let points = parseInt(localStorage.getItem('points')) || 0;
 let totalPoints = parseInt(localStorage.getItem('totalPoints')) || 1000;
 let incrementInterval;
 let hasStarted = false;
+let musicToggleCount = 0;
 
 // Update the displayed points on page load
 document.addEventListener('DOMContentLoaded', updatePointsDisplay);
@@ -18,15 +19,16 @@ function handleTap(tapCount) {
     localStorage.setItem('points', points);
     localStorage.setItem('totalPoints', totalPoints);
     updatePointsDisplay();
+
+    // Play the coin clink sound
+    document.getElementById('coin-sound').play();
   } else {
     alert("No more points to gain!");
   }
 
-  // Trigger haptic feedback with higher frequency vibration
+  // Trigger haptic feedback
   if (navigator.vibrate) {
-    // Pattern: vibrate for 3ms, pause for 3ms, repeated to achieve 180Hz (approx)
-    const vibrationPattern = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3];
-    navigator.vibrate(vibrationPattern);
+    navigator.vibrate(50); // Vibrate for 50ms
   }
 }
 
@@ -74,11 +76,16 @@ function updatePointsDisplay() {
 // Play music button functionality
 document.getElementById('play-music-button').addEventListener('click', () => {
   const backgroundMusic = document.getElementById('background-music');
-  if (backgroundMusic.paused) {
-    backgroundMusic.play().catch(error => {
-      console.error('Error playing background music:', error);
-    });
-  } else {
-    backgroundMusic.pause();
+  musicToggleCount++;
+
+  if (musicToggleCount === 2) {
+    backgroundMusic.src = "https://www.youtube.com/embed/H_G-kvMxg3Y?autoplay=1";
+    musicToggleCount = 0;
+  } else if (musicToggleCount === 1) {
+    if (backgroundMusic.src.includes('autoplay=1')) {
+      backgroundMusic.src = "https://www.youtube.com/embed/H_G-kvMxg3Y?autoplay=0";
+    } else {
+      backgroundMusic.src = "https://www.youtube.com/embed/H_G-kvMxg3Y?autoplay=1";
+    }
   }
 });
