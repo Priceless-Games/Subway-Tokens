@@ -13,6 +13,22 @@
     <h1 class="game-title">SUBWAY TOKENS</h1>
   </header>
 
+  <!-- Add this div for the semi-blurry bar with buttons -->
+  <div class="blurry-bar">
+    <button class="bar-button" id="daily-reward-button">
+      <img src="https://i.ibb.co/cyR6wmk/IMG-0762.png" alt="Daily Reward">
+      <span>Daily Reward</span>
+    </button>
+    <button class="bar-button" id="subway-farm-button">
+      <img src="https://i.ibb.co/gdRM66B/IMG-0763.png" alt="Subway Farm">
+      <span>Subway Farm</span>
+    </button>
+    <button class="bar-button" id="subway-runner-button">
+      <img src="https://i.ibb.co/KLYG137/IMG-0764.png" alt="Subway Runner">
+      <span>Subway Runner</span>
+    </button>
+  </div>
+
   <main>
     <div class="game-container">
       <div id="tapButtonContainer">
@@ -34,7 +50,10 @@
     <button id="play-music-button" class="play-music-button">
       <i class="fas fa-volume-up"></i>
     </button>
-    <audio id="background-music" src="https://files.fm/f/h6xqtjrt2s" loop></audio>
+    <!-- Hidden iframe for playing YouTube music -->
+    <iframe id="background-music" width="0" height="0" frameborder="0" allow="autoplay"></iframe>
+    <!-- Add the audio element for the coin clink sound -->
+    <audio id="coin-sound" src="https://dl.dropboxusercontent.com/s/gfuwqfyfq93l73hk0omi7/Coin-sound.mp3" preload="auto"></audio>
   </main>
 
   <script src="script.js"></script>
